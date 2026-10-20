@@ -1,0 +1,118 @@
+.subtitle-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.subtitle-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.subtitle-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.subtitle-count {
+  font-size: 12px;
+  color: var(--text-subtle);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+.subtitle-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.subtitle-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 120px;
+  color: var(--text-subtle);
+  font-size: 13px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Table */
+.subtitle-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.subtitle-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-elevated);
+  border-bottom: 2px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+.col-num  { width: 38px; }
+.col-time { width: 118px; }
+.col-text { width: auto; }
+.col-del  { width: 38px; }
+
+.subtitle-row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.subtitle-row:hover { background: var(--bg-hover); }
+
+.subtitle-table td {
+  padding: 6px 10px;
+  vertical-align: top;
+}
+
+.td-num {
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Editable cells */
+.cell-display {
+  display: block;
+  cursor: pointer;
+  padding: 3px 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.1s;
+  min-height: 22px;
+  word-break: break-word;
+}
+.cell-display:hover { background: var(--accent-muted); }
+.cell-mono { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.cell-text { font-size: 13px; white-space: pre-wrap; }
+.cell-empty { color: var(--text-subtle); font-style: italic; font-size: 12px; }
+
+.cell-input {
+  width: 100%;
+  resize: none;
+}
+.cell-textarea {
+  resize: vertical;
+  min-height: 44px;
+}

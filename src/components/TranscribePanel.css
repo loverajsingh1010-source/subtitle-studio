@@ -1,0 +1,217 @@
+/* ── TranscribePanel ── */
+
+.transcribe-panel {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.transcribe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+.transcribe-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.transcribe-engine {
+  font-size: 11px;
+  color: var(--success);
+  background: rgba(63, 185, 80, 0.1);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+.transcribe-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Info box */
+.transcribe-info {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--accent-muted);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  line-height: 1.6;
+}
+.transcribe-info code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: rgba(88, 166, 255, 0.15);
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: var(--accent);
+}
+
+/* Success */
+.transcribe-success {
+  font-size: 13px;
+  color: var(--success);
+  background: rgba(63, 185, 80, 0.08);
+  border: 1px solid rgba(63, 185, 80, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+/* Actions row */
+.transcribe-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Main button */
+.btn-transcribe {
+  background: linear-gradient(135deg, #238636, #2ea043);
+  border-color: #2ea043;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+}
+.btn-transcribe:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2ea043, #3fb950);
+  border-color: #3fb950;
+  color: #fff;
+}
+.btn-transcribe:disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+.transcribe-hint {
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+/* ── Running state ── */
+.transcribe-running {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Stage pipeline */
+.transcribe-stages {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.stage-badge {
+  font-size: 11px;
+  padding: 2px 9px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-subtle);
+  background: var(--bg-elevated);
+  transition: all 0.2s;
+}
+.stage-badge.active {
+  border-color: var(--success);
+  color: var(--success);
+  background: rgba(63, 185, 80, 0.1);
+  font-weight: 600;
+}
+.stage-badge.done {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.stage-sep {
+  color: var(--text-subtle);
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+/* Spinner row */
+.transcribe-spinner-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.transcribe-spinner {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid var(--border);
+  border-top-color: var(--success);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.transcribe-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.transcribe-msg-main {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.transcribe-msg-sub {
+  font-size: 11px;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+}
+
+/* Download bar */
+.dl-bar-wrap {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.dl-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #238636, #3fb950);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+.dl-bar-pct {
+  position: absolute;
+  right: 0;
+  top: -17px;
+  font-size: 11px;
+  color: var(--text-subtle);
+}
+
+.btn-sm {
+  padding: 4px 12px;
+  font-size: 12px;
+  align-self: flex-start;
+}
+
+/* Error box */
+.transcribe-error-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.transcribe-error-msg {
+  font-size: 12px;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  line-height: 1.5;
+  word-break: break-word;
+}
